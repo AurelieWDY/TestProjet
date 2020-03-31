@@ -2,7 +2,7 @@ package class_java;
 
 import java.sql.*;
 
-public class refugeanimalier {
+public class Refugeanimalier {
 
 	public static void main(String[] args) throws Exception{
 	
@@ -17,13 +17,13 @@ public class refugeanimalier {
 	try {
 		Connection myConn = DriverManager.getConnection(url, user, password);
 		Statement myStmt = myConn.createStatement();
-		String sql = "insert into refugeanimalier" + "(id, nom, adresse, ville, code_postal, contact, ouverture)" + "values ('190081679', 'SPA Sillingy', '1240 rte de Clermont', 'Sillingy', '74330', '450687053', 'Du Lundi au Samedi de 14h à 18h')";
+		String sql = "insert into refugeanimalier" + "(id, nom, adresse, ville, code_postal, contact, ouverture)" + "values ('190081679', 'SPA Sillingy', '1240 rte de Clermont', 'Sillingy', '74330', '450687053', 'Du Lundi au Samedi de 14h Ã  18h')";
 		myStmt.executeUpdate(sql);
-		System.out.println("Nouvelle refuge ajoutée !");
+		System.out.println("Nouvelle refuge ajoutÃ©e !");
 		
 		ResultSet myRs = myStmt.executeQuery("select * from refugeanimalier");
 	while (myRs.next()) {
-		System.out.println("Numéro ID : " + myRs.getString("id") + " Nom : " + myRs.getString("nom") + " Adresse : " + myRs.getString("adresse") + " Ville : " + myRs.getString("ville") + " Code postal : " + myRs.getString("code_postal") + " Contact : " + myRs.getString("contact") + " Horaire d'ouverture : " + myRs.getString("ouverture"));
+		System.out.println("NumÃ©ro ID : " + myRs.getString("id") + " Nom : " + myRs.getString("nom") + " Adresse : " + myRs.getString("adresse") + " Ville : " + myRs.getString("ville") + " Code postal : " + myRs.getString("code_postal") + " Contact : " + myRs.getString("contact") + " Horaire d'ouverture : " + myRs.getString("ouverture"));
 	}
 	
 	}
